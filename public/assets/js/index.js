@@ -47,7 +47,7 @@ function displayTime(secs) {
 }
 
 function displayInfiniteTime() {
-    katex.render(`\\infty`, $("#timer")[0]);
+    typstRender(`\\infty`, $("#timer")[0]);
 }
 
 function startTimer(onTimeoutFunc) {
@@ -83,7 +83,7 @@ function showIntro() {
       mobile = true;
     }
 
-    displayLaTeXInBody();
+    // displayLaTeXInBody();
     $("#container").show();
 }
 
@@ -93,7 +93,7 @@ function endGame() {
     $("#intro-window").hide();
     $("#game-window").hide();
     $("#ending-window").show();
-    displayLaTeXInBody();
+    // displayLaTeXInBody();
 
     let problemsText = numCorrect + ((numCorrect == 1) ? " problem" : " problems");
     let endingText = "You finished " + problemsText + " for a total score of " + currentScore;
@@ -116,12 +116,12 @@ function endGame() {
       `;
         $("#skipped-problems").append(skippedProblemsHtml);
 
-        katex.render(target.latex, $("#" + targetId)[0], {
+        typstRender(target.latex, $("#" + targetId)[0], {
             throwOnError: false,
             displayMode: true
         });
     });
-    displayLaTeXInBody();
+    // displayLaTeXInBody();
 
     $("#skipped-problems").hide()
     $("#show-skipped-button").text("Show Skipped");
@@ -151,7 +151,7 @@ function startGame(useTimer) {
     $("#skipped-problems").html("");
     $("#skipped-problems").hide();
 
-    displayLaTeXInBody();
+    // displayLaTeXInBody();
 
     $("#score").text(0);
 
@@ -195,15 +195,15 @@ function loadProblem() {
     let pointsText = "(" + problemPoints + ((problemPoints == 1) ? " point)" : " points)");
     $("#problem-points").text(pointsText);
 
-    displayLaTeXInBody();
+    // displayLaTeXInBody();
 
     // load problem body
-    katex.render(target.latex, $("#target")[0], {
+    typstRender(target.latex, $("#target")[0], {
         throwOnError: false,
         displayMode: true
     });
     // load problem body
-    katex.render(target.latex, $("#shadow-target")[0], {
+    typstRender(target.latex, $("#shadow-target")[0], {
         throwOnError: false,
         displayMode: true
     });
@@ -226,7 +226,7 @@ function validateProblem() {
 
     oldVal = currentVal;
     // action to be performed on textarea changed
-    katex.render(currentVal, $("#out")[0], {
+    typstRender(currentVal, $("#out")[0], {
         throwOnError: false,
         displayMode: true
     });
