@@ -4,7 +4,7 @@ let problems = [
 	{
 		"title": "Quadratic Formula",
 		"description": "Classic.",
-		"latex": String.raw`$ x = (-b plus.minus sqrt(b^2 - 4 a c))/2a $`
+		"latex": String.raw`$ x = (-b plus.minus sqrt(b^2 - 4 a c))/(2a) $`
 	},
 	// {
 	// 	"title": "Pythagorean Theorem",

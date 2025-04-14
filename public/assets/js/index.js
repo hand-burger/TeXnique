@@ -242,13 +242,14 @@ function validateProblem() {
         return;
     }
 
-    html2canvas($('#target')[0], {}).then(function (targetCanvas) {
+    html2canvas($('#target')[0], {width: 1000, height: 1000}).then(function (targetCanvas) {
         $('#out').parent().removeClass("correct");
         let width = targetCanvas.width;
         let height = targetCanvas.height;
+        console.log(width, height);
         let targetData = targetCanvas.getContext("2d").getImageData(0, 0, width, height);
         let curTarget = $('#problem-title').text();
-        html2canvas($('#out')[0], {}).then(function (outCanvas) {
+        html2canvas($('#out')[0], {width: 1000, height: 1000}).then(function (outCanvas) {
             if (outCanvas.width != width || outCanvas.height != height) {
               console.log("doesn't match");
               return;
