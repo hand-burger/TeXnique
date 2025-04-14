@@ -118,6 +118,12 @@
       }
     </style>
 
+    <style>
+      .typst-doc {
+        position: absolute;
+      }
+    </style>
+
     <div id="container">
       <p id="title" class="centered-text"> \(\text{\TeX nique}\) </p>
       <p id="subtitle" class="centered-text"> \(\text{A \LaTeX \, Typesetting Game}\) </p>
@@ -203,7 +209,7 @@
         <p> Try to create the following formula: </p>
 
         <div class="latex">
-          <div id="target"></div>
+          <div id="target" style="position: relative;"></div>
         </div>
 
         <br>
@@ -216,7 +222,7 @@
           </div>
 
           <div class="latex out">
-            <div id="out"></div>
+            <div id="out" style="position: relative;"></div>
           </div>
         </div>
 
